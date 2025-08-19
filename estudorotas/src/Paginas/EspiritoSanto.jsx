@@ -6,7 +6,7 @@ export default function EspiritoSanto()
             <p> O Espírito Santo é um estado da região Sudeste, com belas praias, montanhas e forte influência da cultura capixaba. Sua economia é impulsionada pela indústria, agricultura e exportação portuária. Destacam-se cidades como Vitória, a capital, e Vila Velha.
 
 </p>
-<p> <img src=""/> </p>
+<p> <img src="ES.png"/> </p>
 <p> <a href ="/">Voltar para Home </a> 
 </p>
 
