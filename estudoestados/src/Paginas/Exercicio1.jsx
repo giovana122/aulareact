@@ -1,54 +1,50 @@
-import  { useState } from 'react';
+import { useState } from "react";
 
 export default function Exercicio1() {
-    //variavel de estado para os campos do formulario
-    const [numero, setNumero] = useState(0);
+  //variavel de estados para os campos do formularios
+  const [numero, setNumero] = useState(0);
 
-    //variavel de estado para o resultado
-    const [resultado, setResultado] = useState(0);
+  //variavel de estados para o resultado
+  const [resultado, setResultado] = useState(0);
 
-    //função para calcular o quadrado ou o cubo
-    function calcular() {
-        let quadrado, cubo;
+  //função para calcular a
+  function calcular() {
+    let quadrado, cubo;
 
-        quadrado = Number(numero) * Number(numero);
-        cubo = Number(numero) * Number(numero) * Number(numero);
+    quadrado = Number(numero) * Number(numero);
+    cubo = Number(numero) * Number(numero) * Number(numero);
+    setResultado("quadrado:" + quadrado + "cubo:" + cubo);
+  }
+  return (
+    <div>
+      <h1>Exercicio 1</h1>
+      <div className="conteudo">
+        <h3>Exercico 1</h3>
 
-        setResultado("Quadrado:" + quadrado + "-Cubo" + cubo);
-    }
-
-    return (
-        <div>
-            <h1> Exercicio 1 </h1>
-
-            <div className="conteudo">
+        <form>
+          <p>
+            Digite um numero qualquer <br />
+            <input type="text" value={numero}
+              onChange={(e) => setNumero(e.target.value)} />
+          </p>
 
 
-                <h3>calculo do quadrado/cubo</h3>
-                <form>
-                    <p>
-                        digite um número qualquer: <br />
+          <p>
+            <input type="button" value="Calcular" onClick={calcular} />
 
-                        <input type="text" value={numero}
-                            onChange={(e) => setNumero(e.target.value)} />
+          </p>
+          <p>
+            <b>Resultado</b>
+            <br />
+            Numero é {numero} <br />
+            Resultado é {resultado}
+          </p>
+          <p>
+            <a href="/">Voltar para Home</a>
+          </p>
+        </form>
+      </div>
 
-                    </p>
-                    <p>
-                    <input type="button" value="Exercicio 1" onClik={calcular} />
-                    </p>
-                    <p>
-                        <b>resultado</b>
-                        <br />
-                        numero é {numero} <br />
-                        resultado é {resultado}
-                    </p>
-
-                    <p>
-                        <a href="/">Voltar</a>
-                    </p>
-                </form>
-
-            </div>
-        </div>
-    );
+    </div>
+  );
 }

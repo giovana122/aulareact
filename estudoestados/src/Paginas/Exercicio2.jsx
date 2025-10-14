@@ -1,49 +1,51 @@
-import React, { useState } from 'react';
-
-export default function Exercicio2()
-
-{
-
-   //variavel de estados para os campos do formulario
+import { useState } from "react";
+export default function Exercicio2() {
+   //variavel de estados para os campos do formularios
    const [numero, setNumero] = useState(0);
 
    //variavel de estados para o resultado
    const [resultado, setResultado] = useState(0);
-
-   //função para calcular 
+ 
+   //função para calcular o quadrado ou o cubo
    function calcular() {
-       let quadrado, cubo;
-
-       quadrado = Number(numero) * Number(numero);
-       cubo = Number(numero) * Number(numero) * Number(numero);
-setResultado("quadrado:"+quadrado+"cubo:"+cubo);
-
-
+     let fah;
+ 
+     fah = Number(numero) - 32 * 5 /9;
+    
+     setResultado("temperatura:" + fah);
    }
     return (
-        <div>
-            <h1> Exercicio 2</h1>
-            <div className="conteudo">
-                <h3> Calculo do quadrado/cubo</h3>
+      <div>
+        <h1>Exercicio 2</h1>
+        <div className="conteudo"> 
+          <h3>Exercico 2</h3>
+        
+      <form>
+      <p>
+          Digite a temperatura em graus fahrenhet <br/>
+          <input type="text" value={numero}
+              onChange={(e) => setNumero(e.target.value)} />
+      </p>
 
-                <form>
-                    <p>
-                        digite a temperatura em graus fahrenheit <br />
-                      <input type="text"/>
-                    </p>
-                    <p>
-                    <input type="button" value="Exercicio2" />
+      
+     
+      <p>
+            <input type="button" value="Calcular" onClick={calcular} />
 
-                    </p>
-
-                    <p>
-                     <a href="/">Voltar</a>   
-                    </p>
-
-
-                </form>
-            </div>
+          </p>
+          <p>
+            <b>Resultado</b>
+            <br />
             
-        </div>
-    )
-}
+            Resultado é {resultado}
+          </p>
+      <p>
+                 <a href="/">Voltar para Home</a>
+             </p>
+      
+      </form>
+      </div>
+    
+      </div>
+    );
+  }
